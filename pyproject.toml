@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sqlflip"            # <-- CHANGE: must be unique on PyPI
+version = "0.1.0"                    # <-- increase on every upload
+description = "Detect a SQL query's dialect (PostgreSQL, MySQL, SQL Server/T-SQL, standard) and view it in the others."
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Jyoti", email = "anuvishalp@gmail.com"}]   # <-- CHANGE
+requires-python = ">=3.8"
+keywords = ["sql", "postgresql", "mysql", "tsql", "sqlserver", "converter", "dialect"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Database",
+]
+
+[project.scripts]
+sqlflip = "sqlflip.cli:main"
+sqlflip-gui = "sqlflip.gui:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.urls]
+Homepage = "https://github.com/anuvishalp/sqlflip"
+Issues = "https://github.com/anuvishalp/sqlflip/issues"
